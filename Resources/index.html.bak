@@ -1,12 +1,13 @@
 <html>
   <head>
     <script src="javascripts/jquery-1.4.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="javascripts/twitterHelper.js" type="text/javascript" charset="utf-8"></script>
+	<script src="javascripts/twitter.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
-    <div id="logo"><img src="images/logo.png"/></div>
-    <div id="main" class="mTop10">
-      <div id="loginForm" class="span-10 mLeft45">
-        <div id="loginFormContainer">
+    <div >
+      <div >
+        <div >
         	<fieldset>
         		<legend>Sign in</legend>
 
@@ -20,11 +21,5 @@
         	</fieldset>
         </div>
       </div>
-      
-    
-	<div id="footer" class="statusBar">
-		<p class="fLeft"> &copy; 2010 Karunakar Revuri</p>
-		<span id="progress" class="fRight mRight20 dNone"><img src="images/ajax-loader.gif" alt="loading" /></span>
-	</div>
-  </body>
+ </body>
 </html>
