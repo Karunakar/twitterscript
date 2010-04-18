@@ -27,3 +27,19 @@ var Twitter = new function(){
 
 }
 
+/*
+
+$.ajax({
+						url: url,
+						method: 'GET',
+						datatype: 'json',
+						success: function(json,textStatus)
+						{
+							alert("Sucess ful Authentication");
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown)
+						{
+							alert("Invalid UserName/PAssword");
+						},
+					});*/
+
