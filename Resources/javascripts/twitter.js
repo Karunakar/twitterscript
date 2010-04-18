@@ -6,7 +6,7 @@ var Twitter = new function(){
 
 			 function make_base64_auth(username, password) {
 				var ok = username + ':' + password;
-				var hash = Base64.encode(tok);
+				var hash = Base64.encode(ok);
 				return "Basic " + hash;
 				}
 
@@ -14,13 +14,33 @@ var Twitter = new function(){
 			return {
 				login: function()
 				{
-					
+					Titanium.API.debug("This is a debug message");
 					var username = $('#username').val();
 					var password = $('#password').val();
-					alert(make_base64_auth(username, password));
+					var auth =  make_base64_auth(username, password);
 					var url = "http://twitter.com/account/verify_credentials.json";
 					
-					alert("pppp");
+					// I cud't understand the req.setRequestHeader
+					// Need to get the clear idea on it
+					// Just copied from the Jquery docs now..
+					// TO DO:: need to try without before send
+					$.ajax({
+						url: url,
+						method: 'GET',
+						datatype: 'json',
+						beforeSend: function (req) {
+							req.setRequestHeader('Authorization', auth);
+						},
+						success: function(json,textStatus)
+						{
+							alert("Sucess ful Authentication");
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown)
+						{
+							alert("Invalid UserName/PAssword");
+						},
+					});
+
 
 				},
 			}
