@@ -14,9 +14,16 @@ var Twitter = new function(){
 			return {
 				login: function()
 				{
+					
+					var username = $('#username').val();
+					var password = $('#password').val();
+					alert(make_base64_auth(username, password));
+					var url = "http://twitter.com/account/verify_credentials.json";
+					
 					alert("pppp");
+
 				},
-			};
+			}
 
 }
 

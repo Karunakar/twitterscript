@@ -1,0 +1,37 @@
+        login: function () {
+            username = $('#username').val();
+            password = $('#password').val();
+            var auth = make_basic_auth(username, password);
+            var url = "http://twitter.com/account/verify_credentials.json";
+
+            $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'json',
+                beforeSend: function (req) {
+                    req.setRequestHeader('Authorization', auth);
+                },
+                success: function (json, textStatus) {
+                    switch_to_main();
+                    screen_name = json.screen_name;
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    notification_dialog("Login Failed", XMLHttpRequest.responseText);
+                }
+            });
+        },
+
+
+	$.ajax({
+						url: url,
+						method: 'GET',
+						datatype: 'json',
+						success: function(json,textStatus)
+						{
+							alert("Sucess ful Authentication");
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown)
+						{
+							alert("Invalid UserName/PAssword");
+						},
+					});
